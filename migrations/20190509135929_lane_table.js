@@ -5,15 +5,15 @@ exports.up = function(knex, Promise) {
       table.increments('id').primary();
       table.string('title');
     }),
-    knex.schema.createTable(`job_types`, function(table){
+    knex.schema.createTable(`jobs`, function(table){
       table.increments('id').primary();
       table.string('title');
       table.string('desciption');
     }),
-    knex.schema.createTable('lanes_job_types', function(table){
+    knex.schema.createTable('lanes_jobs', function(table){
       table.increments('id').primary();
       table.integer('lane_id').references('lanes.id');
-      table.integer('job_type_id').references('job_types.id');
+      table.integer('job_id').references('jobs.id');
     })
   ]);
 };
