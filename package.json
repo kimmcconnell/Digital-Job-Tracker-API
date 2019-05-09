@@ -1,0 +1,21 @@
+{
+  "name": "digital-kanban-api",
+  "version": "1.0.0",
+  "description": "api for the digital kanban project",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Kimberly McConnell",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "knex": "^0.16.5",
+    "mysql": "^2.17.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^6.1.4"
+  }
+}
