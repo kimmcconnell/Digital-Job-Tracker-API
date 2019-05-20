@@ -1,3 +1,4 @@
+// Update with your config settings.
 
 module.exports = {
 
@@ -15,11 +16,9 @@ module.exports = {
   staging: {
     client: 'mysql',
     connection: {
-      host: 'localhost',
-      user: 'root',
-      password: 'password',
       database: 'kanban_local',
-      charset: 'utf8'
+      user:     'root',
+      password: 'password'
     },
     pool: {
       min: 2,
@@ -33,11 +32,9 @@ module.exports = {
   production: {
     client: 'mysql',
     connection: {
-      host: 'localhost',
-      user: 'root',
-      password: 'password',
       database: 'kanban_local',
-      charset: 'utf8'
+      user:     'root',
+      password: 'password'
     },
     pool: {
       min: 2,

@@ -7,9 +7,12 @@ const router = express.Router();
 const queries = require('./../db/queries');
 
 router.get('/job_types', (req, res) => {
+  console.log("one", queries);
+  console.log(queries.job_types);
+  console.log(queries.job_types.getAll());
   queries.job_types.getAll()
   .then(job_types => {
-    res.json(job_types)
+    res.json(job_types);
   })
 });
 

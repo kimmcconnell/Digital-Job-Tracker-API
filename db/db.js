@@ -1,11 +1,10 @@
-const knex = require('knex');
-const environment = 'development';
-const config = require('./../knexfile');
-const environmentConfig = config[environment];
-const connection = knex(environmentConfig);
+var config = require('../knexfile.js');
+var env = 'development';
+var knex = require('knex')(config[env]);
 
-module.exports = connection;
+module.exports = knex;
 
+knex.migrate.latest([config]);
 
 // exports.TABLES = {
 //   LANES: 'lanes',
