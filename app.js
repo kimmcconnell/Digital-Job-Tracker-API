@@ -5,6 +5,14 @@ const bodyParser = require('body-parser');
 
 const job_types = require('./routes/job_types');
 
+app.use(bodyParser.urlencoded ({
+  extended: true
+}));
+app.use(bodyParser.json({
+  limit: "8mb",
+}));
+
+
 app.use(job_types);
 
 app.get('/', (req, res) => res.send('Hello World!'));

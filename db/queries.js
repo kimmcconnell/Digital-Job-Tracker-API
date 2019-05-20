@@ -10,16 +10,9 @@ module.exports = {
       return knex('job_types').where('id', id).first();
     },
     create: async function(job_type) {
+      console.log("on create", job_type)
       try {
-        let id = await knex('keg').insert({
-          "title": job_type.title,
-          "desciption": job_type.desciption
-        })
-        res.json({
-          id: id[0],
-          title,
-          desciption,
-        })
+        await knex('job_types').insert(job_type);
       } catch (e) {
         console.log(e);
         next (e)
