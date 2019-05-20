@@ -1,9 +1,7 @@
 // this is where db requests pertaining to jobs_types will go
 
 const express = require('express');
-
 const router = express.Router();
-
 const queries = require('./../db/queries');
 
 router.get('/job_types', (req, res) => {

@@ -1,10 +1,18 @@
 var config = require('../knexfile.js');
 var env = 'development';
-var knex = require('knex')(config[env]);
+
+const knex = require(`knex`) ({
+  client: 'mysql',
+  connection: {
+    host: 'localhost',
+    user: 'root',
+    password: 'password',
+    database: 'kanban_local'
+  }
+});
 
 module.exports = knex;
 
-knex.migrate.latest([config]);
 
 // exports.TABLES = {
 //   LANES: 'lanes',
