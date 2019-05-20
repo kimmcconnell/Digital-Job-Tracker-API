@@ -6,18 +6,14 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon"
-    
   },
   "author": "Kimberly McConnell",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
     "knex": "^0.16.5",
-    "mysql": "^2.17.1"
+    "mysql": "^2.17.1",
+    "sqlite3": "^4.0.8"
   },
-  "devDependencies": {
-    "chai": "^4.2.0",
-    "chai-as-promised": "^7.1.1",
-    "mocha": "^6.1.4"
-  }
+  "devDependencies": {}
 }

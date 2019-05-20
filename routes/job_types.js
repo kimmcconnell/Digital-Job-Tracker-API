@@ -4,9 +4,14 @@ const express = require('express');
 
 const router = express.Router();
 
-router.get('job_types', (req, res) => {
-  res.JSON([]);
-})
+const queries = require('./../db/queries');
+
+router.get('/job_types', (req, res) => {
+  queries.job_types.getAll()
+  .then(job_types => {
+    res.json(job_types)
+  })
+});
 
 module.exports = router;
 
