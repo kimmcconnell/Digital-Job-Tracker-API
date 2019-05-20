@@ -2,15 +2,15 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-const knex = require (`knex`) ({
-  client: 'mysql',
-  connection: {
-    host: 'localhost',
-    user: 'root',
-    password: 'password',
-    database: 'kanban_local'
-  }
-});
+// const knex = require (`knex`) ({
+//   client: 'mysql',
+//   connection: {
+//     host: 'localhost',
+//     user: 'root',
+//     password: 'password',
+//     database: 'kanban_local'
+//   }
+// });
 
 const job_types = require('./routes/job_types');
 
