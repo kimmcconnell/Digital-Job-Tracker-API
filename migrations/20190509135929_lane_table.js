@@ -1,19 +1,24 @@
 
+// add created_at and updated_at times for ALL data
+
 exports.up = function(knex, Promise) {
   return Promise.all([
     knex.schema.createTable(`lanes`, function(table){
       table.increments('id').primary();
       table.string('title');
     }),
-    knex.schema.createTable(`jobs`, function(table){
+
+    // jobs have status feild that shows where the job is
+    knex.schema.createTable(`job_types`, function(table){
       table.increments('id').primary();
       table.string('title');
       table.string('desciption');
+      // descirption needs to be longer
     }),
-    knex.schema.createTable('lanes_jobs', function(table){
+    knex.schema.createTable('lanes_job_types', function(table){
       table.increments('id').primary();
       table.integer('lane_id').references('lanes.id');
-      table.integer('job_id').references('jobs.id');
+      table.integer('job_type_id').references('job_types.id');
     })
   ]);
 };

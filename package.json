@@ -4,7 +4,9 @@
   "description": "api for the digital kanban project",
   "main": "app.js",
   "scripts": {
-    "test": "test"
+    "start": "node app.js",
+    "dev": "nodemon"
+    
   },
   "author": "Kimberly McConnell",
   "license": "ISC",
