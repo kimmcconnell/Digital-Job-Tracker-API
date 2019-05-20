@@ -3,19 +3,7 @@ const app = express();
 const port = 3000;
 const bodyParser = require('body-parser');
 
-
-const knex = require (`knex`) ({
-  client: 'mysql',
-  connection: {
-    host: 'localhost',
-    user: 'root',
-    password: 'password',
-    database: 'kanban_local'
-  }
-});
-
 const job_types = require('./routes/job_types');
-
 
 app.use(job_types);
 
