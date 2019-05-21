@@ -12,7 +12,7 @@ exports.up = function(knex, Promise) {
     knex.schema.createTable(`job_types`, function(table){
       table.increments('id').primary();
       table.string('title');
-      table.string('desciption');
+      table.string('description');
       // descirption needs to be longer
     }),
     knex.schema.createTable('lanes_job_types', function(table){

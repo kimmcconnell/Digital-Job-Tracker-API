@@ -7,7 +7,7 @@ module.exports = {
     connection: {
       host: 'localhost',
       user: 'root',
-      password: 'password',
+      password: 'root',
       database: 'kanban_local',
       charset: 'utf8'
     }
@@ -18,7 +18,7 @@ module.exports = {
     connection: {
       database: 'kanban_local',
       user:     'root',
-      password: 'password'
+      password: 'root'
     },
     pool: {
       min: 2,
@@ -34,7 +34,7 @@ module.exports = {
     connection: {
       database: 'kanban_local',
       user:     'root',
-      password: 'password'
+      password: 'root'
     },
     pool: {
       min: 2,
