@@ -18,8 +18,10 @@ exports.up = function(knex, Promise) {
     }),
     knex.schema.createTable('jobs', function(table){
       table.increments('id').primary();
-      table.integer('title');
-      table.integer('desciption');
+      table.string('title');
+      table.string('description');
+      table.string('job_type');
+      table.integer('lane_id').unsigned().references('lanes.id')
       table.timestamp('created_at').defaultTo(knex.fn.now());
     }),
     // knex.schema.createTable('lanes_job_types', function(table){
