@@ -13,13 +13,20 @@ exports.up = function(knex, Promise) {
       table.increments('id').primary();
       table.string('title');
       table.string('description');
+      table.timestamp('created_at').defaultTo(knex.fn.now());
       // descirption needs to be longer
     }),
-    knex.schema.createTable('lanes_job_types', function(table){
+    knex.schema.createTable('jobs', function(table){
       table.increments('id').primary();
-      table.integer('lane_id').references('lanes.id');
-      table.integer('job_type_id').references('job_types.id');
-    })
+      table.integer('title');
+      table.integer('desciption');
+      table.timestamp('created_at').defaultTo(knex.fn.now());
+    }),
+    // knex.schema.createTable('lanes_job_types', function(table){
+    //   table.increments('id').primary();
+    //   table.integer('lane_id').references('lanes.id');
+    //   table.integer('job_type_id').references('job_types.id');
+    // })
   ]);
 };
 
@@ -27,6 +34,7 @@ exports.down = function(knex, Promise) {
   return Promise.all([
     knex.schema.dropTable('lanes'),
     knex.schema.dropTable('job_types'),
-    knex.schema.dropTable('lanes_job_types')
+    knex.schema.dropTable('jobs'),
+    // knex.schema.dropTable('lanes_job_types')
   ]);
 };
