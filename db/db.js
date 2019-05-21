@@ -14,8 +14,3 @@ const knex = require(`knex`) ({
 module.exports = knex;
 
 
-// exports.TABLES = {
-//   LANES: 'lanes',
-//   JOBS: 'jobs',
-//   LANES_JOBS: 'lanes_jobs',  
-// };

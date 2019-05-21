@@ -5,6 +5,9 @@ exports.seed = function(knex, Promise) {
   .then(() => {
     return knex('jobs').del()
   })
+  .then(() => {
+    return knex('lanes').del()
+  })
   .then(function () {
     return knex('job_types').insert([
       {id: 1, title: '5S Project', description: 'Engage in 5s projects'},
@@ -14,9 +17,19 @@ exports.seed = function(knex, Promise) {
   })
   .then(function () {
     return knex('jobs').insert([
-      {id: 1, title: 'For Jim', description: 'Special Project, see Jim'},
-      {id: 2, title: 'Blue', description: 'Titanium'},
-      {id: 3, title: 'Green', description: 'Titanium'}
-    ]);
+      {id: 1, title: 'For Jim', description: 'Special Project, see Jim', lane_id: 1, job_type: 2},
+      {id: 2, title: 'Blue', description: 'Titanium', lane_id: 1, job_type: 2},
+      {id: 3, title: 'Green', description: 'Titanium', lane_id: 1, job_type: 2},
+      {id: 4, title: 'Blue', description: 'Steel', lane_id: 2, job_type: 1},
+      {id: 5, title: 'Green', description: 'Steel', lane_id: 2, job_type: 1}
+    ])
+    .then(function () {
+      return knex('lanes').insert([
+        {id: 1, name: 'To Be Started', details: null},
+        {id: 2, name: 'Phase 1', details: null},
+        {id: 3, name: 'Phase 2', details: null},
+        {id: 4, name: 'Phase 3', details: null}
+      ]);
+    })
   })
 };

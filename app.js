@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const job_types = require('./routes/job_types');
+const jobs = require('./routes/jobs');
 
 app.use(cors());
 
@@ -16,16 +17,19 @@ app.use(bodyParser.json({
 }));
 
 
+app.use(jobs);
+
 app.use(job_types);
+
 
 app.get('/', (req, res) => res.send('Hello World!'));
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 
-// app.get('/job_types', async (req, res) => {
+// app.get('/jobs', async (req, res) => {
 //     try {
-//       let data = await knex('job_types');
+//       let data = await knex('jobs');
 //       res.json(data);
 //       console.log(data);
 //     } catch (e) {

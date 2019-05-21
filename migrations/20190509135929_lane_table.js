@@ -5,7 +5,8 @@ exports.up = function(knex, Promise) {
   return Promise.all([
     knex.schema.createTable(`lanes`, function(table){
       table.increments('id').primary();
-      table.string('title');
+      table.string('name');
+      table.string('details');
     }),
 
     // jobs have status feild that shows where the job is
@@ -20,8 +21,8 @@ exports.up = function(knex, Promise) {
       table.increments('id').primary();
       table.string('title');
       table.string('description');
-      table.string('job_type');
-      table.integer('lane_id').unsigned().references('lanes.id')
+      table.integer('job_type').unsigned().references('job_type.id');
+      table.integer('lane_id').unsigned().references('lanes.id');
       table.timestamp('created_at').defaultTo(knex.fn.now());
     }),
     // knex.schema.createTable('lanes_job_types', function(table){

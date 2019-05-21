@@ -1,5 +1,5 @@
 const knex = require('./db');
-// var db  = require('./db');
+
 
 module.exports = {
   job_types: {
@@ -13,6 +13,24 @@ module.exports = {
       console.log("on create", job_type)
       try {
         await knex('job_types').insert(job_type);
+      } catch (e) {
+        console.log(e);
+        next (e)
+      }
+    }
+  },
+
+  jobs: {
+    getAll: function() {
+      return knex('jobs')
+    },
+    getOne: function(id) {
+      return knex('jobs').where('id', id).first();
+    },
+    create: async function(job) {
+      console.log("on create", job)
+      try {
+        await knex('jobs').insert(job);
       } catch (e) {
         console.log(e);
         next (e)
