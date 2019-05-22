@@ -36,5 +36,23 @@ module.exports = {
         next (e)
       }
     }
+  },
+
+  lanes: {
+    getAll: function() {
+      return knex('lanes')
+    },
+    getOne: function(id) {
+      return knex('lanes').where('id', id).first();
+    },
+    create: async function(lane) {
+      console.log("on create", lane)
+      try {
+        await knex('lanes').insert(lane);
+      } catch (e) {
+        console.log(e);
+        next (e)
+      }
+    }
   }
 }

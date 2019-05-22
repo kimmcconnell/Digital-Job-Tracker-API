@@ -6,6 +6,7 @@ const cors = require('cors');
 
 const job_types = require('./routes/job_types');
 const jobs = require('./routes/jobs');
+const jobs = require('./routes/lanes');
 
 app.use(cors());
 
@@ -18,6 +19,8 @@ app.use(bodyParser.json({
 
 
 app.use(jobs);
+
+app.use(lanes);
 
 app.use(job_types);
 
