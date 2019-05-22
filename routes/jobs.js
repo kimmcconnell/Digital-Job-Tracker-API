@@ -10,6 +10,13 @@ router.get('/jobs', (req, res) => {
   })
 });
 
+router.get('/jobs/:id', (req, res) => {
+  queries.jobs.getOne(req.params.id)
+  .then(jobs => {
+    res.json(jobs)
+  })
+});
+
 router.post('/jobs', (req, res) => {
   console.log(req.body);
   queries.jobs.create(req.body)
@@ -19,12 +26,19 @@ router.post('/jobs', (req, res) => {
 });
 
 router.put('/jobs/:id', (req, res) => {
-  console.log("in route");
-  console.log(req.body);
   queries.jobs.update(req.params.id, req.body)
   .then(status => {
     res.send(status);
   })
 });
+
+router.delete('/jobs/:id', (req, res) => {
+  console.log("in jobs route")
+  queries.jobs.delete(req.params.id)
+  .then(result => {
+    res.json(result);
+  })
+})
+
 
 module.exports = router;

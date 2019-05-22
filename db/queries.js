@@ -44,6 +44,10 @@ module.exports = {
         console.log(e);
         next (e)
       }
+    },
+    delete: function(id) {
+      console.log("on delete query", id)
+      return knex('jobs').where('id', id).del();
     }
   },
 
