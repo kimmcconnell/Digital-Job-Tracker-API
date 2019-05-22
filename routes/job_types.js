@@ -12,8 +12,6 @@ router.get('/job_types', (req, res) => {
   })
 });
 
-
-
 router.get('/job_types/:id', (req, res) => {
   queries.job_types.getOne(req.params.id)
   .then(job_types => {

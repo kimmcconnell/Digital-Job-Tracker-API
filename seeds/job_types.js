@@ -17,11 +17,11 @@ exports.seed = function(knex, Promise) {
   })
   .then(function () {
     return knex('jobs').insert([
-      {id: 1, title: 'For Jim', description: 'Special Project, see Jim', lane_id: 1, job_type: 2},
-      {id: 2, title: 'Blue', description: 'Titanium', lane_id: 1, job_type: 2},
-      {id: 3, title: 'Green', description: 'Titanium', lane_id: 1, job_type: 2},
-      {id: 4, title: 'Blue', description: 'Steel', lane_id: 2, job_type: 1},
-      {id: 5, title: 'Green', description: 'Steel', lane_id: 2, job_type: 1}
+      {id: 1, title: 'For Jim', description: 'Special Project, see Jim', due_date: '2019-05-25 13:23:45', lane_id: 1, job_type: 2},
+      {id: 2, title: 'Blue', description: 'Titanium', due_date: '2019-05-25 13:23:45', lane_id: 1, job_type: 2},
+      {id: 3, title: 'Green', description: 'Titanium', due_date: '2019-05-25 13:23:45', lane_id: 1, job_type: 2},
+      {id: 4, title: 'Blue', description: 'Steel', due_date: '2019-05-25 13:23:45', lane_id: 2, job_type: 1},
+      {id: 5, title: 'Green', description: 'Steel', due_date: '2019-05-25 13:23:45', lane_id: 2, job_type: 1}
     ])
     .then(function () {
       return knex('lanes').insert([

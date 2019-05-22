@@ -21,6 +21,7 @@ exports.up = function(knex, Promise) {
       table.increments('id').primary();
       table.string('title');
       table.string('description');
+      table.string('due_date');
       table.integer('job_type').unsigned().references('job_type.id');
       table.integer('lane_id').unsigned().references('lanes.id');
       table.timestamp('created_at').defaultTo(knex.fn.now());
