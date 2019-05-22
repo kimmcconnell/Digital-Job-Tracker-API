@@ -10,4 +10,12 @@ router.get('/jobs', (req, res) => {
   })
 });
 
+router.post('/jobs', (req, res) => {
+  console.log(req.body);
+  queries.jobs.create(req.body)
+  .then(result => {
+    res.send(result);
+  })
+});
+
 module.exports = router;

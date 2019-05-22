@@ -6,7 +6,7 @@ const cors = require('cors');
 
 const job_types = require('./routes/job_types');
 const jobs = require('./routes/jobs');
-const jobs = require('./routes/lanes');
+const lanes = require('./routes/lanes');
 
 app.use(cors());
 
