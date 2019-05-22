@@ -18,4 +18,13 @@ router.post('/jobs', (req, res) => {
   })
 });
 
+router.put('/jobs/:id', (req, res) => {
+  console.log("in route");
+  console.log(req.body);
+  queries.jobs.update(req.params.id, req.body)
+  .then(status => {
+    res.send(status);
+  })
+});
+
 module.exports = router;

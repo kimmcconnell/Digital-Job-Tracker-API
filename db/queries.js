@@ -35,6 +35,15 @@ module.exports = {
         console.log(e);
         next (e)
       }
+    },
+    update: async function(id, job) {
+      console.log("on edit", job)
+      try {
+        await knex('jobs').where('id', id).update(job);
+      } catch (e) {
+        console.log(e);
+        next (e)
+      }
     }
   },
 
