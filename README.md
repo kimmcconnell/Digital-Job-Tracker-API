@@ -70,20 +70,6 @@ $ knex seed:run
 ```
 
 ## **To use**
-To use without a front end, you can play with the data postman.
- <br>
- 
-**Make a GET request** <br>
-Make a get request to ? in postman to see all the data in the table by selecting "GET".
- <br>
-
-**Make a POST request** <br>
-Make a post request to ? in postman. After selecting "PUT", go to the Body tab and click the option for x-www-form-urlencoded to enter values in as key value pairs, or select raw to enter the data as objects. 
- <br>
-
-**Make a PUT request to edit a row** <br>
-Do the same thing as a post request expect select "PUT". Use ? **id** where id is the id of the ? you row you want to alter. For instance, if you use ?, you'll be altering the third ?. 
-
 To use with the front-end:
 Clone the api branch of my Digital-Job-Tracker [here](https://github.com/kimmcconnell/Digital-Job-Tracker). <br>
 ```bash
@@ -92,3 +78,24 @@ $ npm run start
 ```
 <br>
 <br>
+To use without a front end, you can play with the data postman.
+ <br>
+ 
+**Make a GET request** <br>
+Make a get request to http://localhost:3000/jobs in postman to see all the data in the table by selecting "GET".
+ <br>
+
+**Make a POST request** <br>
+Make a post request to http://localhost:3000/jobs in postman. After selecting "PUT", go to the Body tab and click the option for x-www-form-urlencoded to enter values in as key value pairs, or select raw to enter the data as objects. The possible keys are <br>
+title<br>
+description<br>
+lane_id<br>
+job_type<br>
+due_date<br>
+_None of these are necessary, so a put request should work without all keys._
+
+ <br>
+
+**Make a PUT request to edit a row** <br>
+Do the same thing as a post request expect select "PUT". Use http://localhost:3000/jobs/:**id** where **id** is the id of the job you row you want to alter. For instance, if you use http://localhost:3000/jobs/3, you'll be altering the third job in the list. 
+
