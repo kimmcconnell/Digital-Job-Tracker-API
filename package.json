@@ -4,7 +4,10 @@
   "description": "api for the digital kanban project",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "db:seed": "knex seed:run",
+    "db:migrate": "knex migrate:latest",
+    "db:setup": "db:migrate db:seed"
   },
   "author": "Kimberly McConnell",
   "license": "ISC",
